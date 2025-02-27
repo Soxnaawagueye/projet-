@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css"> 
+<!-- 
+body  {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #666666;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+
+/* Tips for Elastic layouts 
+1. Since the elastic layouts overall sizing is based on the user's default fonts size, they are more unpredictable. Used correctly, they are also more accessible for those that need larger fonts size since the line length remains proportionate.
+2. Sizing of divs in this layout are based on the 100% font size in the body element. If you decrease the text size overall by using a font-size: 80% on the body element or the #container, remember that the entire layout will downsize proportionately. You may want to increase the widths of the various divs to compensate for this.
+3. If font sizing is changed in differing amounts on each div instead of on the overall design (ie: #sidebar1 is given a 70% font size and #mainContent is given an 85% font size), this will proportionately change each of the divs overall size. You may want to adjust based on your final font sizing.
+*/
+.twoColElsLtHdr #container { 
+	width: 46em;  /* this width will create a container that will fit in an 800px browser window if text is left at browser default font sizes */
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+} 
+.twoColElsLtHdr #header { 
+	background: #DDDDDD; 
+	padding: 0 10px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+} 
+.twoColElsLtHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+}
+
+/* Tips for sidebar1:
+1. Be aware that if you set a font-size value on this div, the overall width of the div will be adjusted accordingly.
+2. Since we are working in ems, it's best not to use padding on the sidebar itself. It will be added to the width for standards compliant browsers creating an unknown actual width. 
+3. Space between the side of the div and the elements within it can be created by placing a left and right margin on those elements as seen in the ".twoColElsLtHdr #sidebar1 p" rule.
+*/
+.twoColElsLtHdr #sidebar1 {
+	float: left; 
+	width: 12em; /* since this element is floated, a width must be given */
+	background: #EBEBEB; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 15px 0; /* top and bottom padding create visual space within this div */
+}
+.twoColElsLtHdr #sidebar1 h3, .twoColElsLtHdr #sidebar1 p {
+	margin-left: 10px; /* the left and right margin should be given to every element that will be placed in the side columns */
+	margin-right: 10px;
+}
+
+/* Tips for mainContent:
+1. If you give this #mainContent div a font-size value different than the #sidebar1 div, the margins of the #mainContent div will be based on its font-size and the width of the #sidebar1 div will be based on its font-size. You may wish to adjust the values of these divs.
+2. The space between the mainContent and sidebar1 is created with the left margin on the mainContent div.  No matter how much content the sidebar1 div contains, the column space will remain. You can remove this left margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends.
+3. To avoid float drop, you may need to test to determine the approximate maximum image/element size since this layout is based on the user's font sizing combined with the values you set. However, if the user has their browser font size set lower than normal, less space will be available in the #mainContent div than you may see on testing.
+4. In the Internet Explorer Conditional Comment below, the zoom property is used to give the mainContent "hasLayout." This avoids several IE-specific bugs that may occur.
+*/
+.twoColElsLtHdr #mainContent {
+	margin: 0 1.5em 0 13em; /* the right margin can be given in ems or pixels. It creates the space down the right side of the page. */
+} 
+.twoColElsLtHdr #footer { 
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background:#DDDDDD;
+} 
+.twoColElsLtHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+
+/* Miscellaneous classes for reuse */
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+.style3 {font-family: "Times New Roman", Times, serif; font-weight: bold; font-size: 24px; font-style: italic; }
+.style5 {	color: #333333;
+	font-weight: bold;
+}
+--> 
+</style><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColElsLtHdr #sidebar1 { padding-top: 30px; }
+.twoColElsLtHdr #mainContent { zoom: 1; padding-top: 15px; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]--></head>
+
+<body class="twoColElsLtHdr">
+
+<div id="container">
+  <div id="header">
+    <h1>Bienvenue au Lac Rose Une site touristique qui acceuille du monde d'identité differentes.</h1>
+    <!-- end #header --></div>
+  <div id="sidebar1">
+    <h3>
+      <!-- end #sidebar1 -->
+      <span class="style5">Le Sénégal est un pays d’Afrique de l’Ouest riche en histoire, en culture et en beauté naturelle. Parmi les nombreuses attractions que le pays offre, le <a href="dakar.html">Lac Rose</a><a href="../zone reactive/images/OpenStreetMap.jpg"></a><a href="../zone reactive/monsite/dakar.html" target="_blank"></a>, ou lac Retba, est l’un des sites les plus fascinants et uniques à ne pas manquer.
+  Ce lac est très célèbre pour sa fameuse couleur rose mais aussi pour avoir été l’arrivée du rallye Paris-Dakar.Le lac Retba du Sénégal, souvent appelé le lac Rose pour sa couleur si particulière, est l'un des sites les plus visités de la presqu'île du Cap-Vert au Sénégal. Il possède des nuances allant du rose fuchsia au rouge pourpre selon la luminosité. C'est le second lac le plus salé du monde, après la Mer Morte, c'est pour cela qu'on y flotte quand on s'y baigne.Le lac Retba du Sénégal est un grand lagon qui a une superficie de 3 km², il est peu profond et est entouré de dunes. C’est l’une des rares étendues d’eau au monde à présenter cette couleur étrange et captivante. La couleur est particulièrement vive pendant les mois les plus secs de l’année entre octobre et mai, lorsque le taux de salinité augmente.
+  Attention : le Lac Rose n’est pas tout le temps rose. En effet, cela dépend également des conditions météorologiques, notamment l’ensoleillement et le vent.
+  En raison de la forte concentration de sel dans le Lac Rose, il est possible de flotter à la surface de l’eau sans effort. C’est une expérience unique et amusante à ne surtout pas manquer.
+  Comparé au Lac Tana, Patrimoine Mondiale de l’UNESCO depuis 2015 (Endalkachew et Suzanne, 2017), la biodiversité du lac Rose et son environnement est riche et variée. Ceci permet de distinguer plusieurs écosystèmes parmi lesquels nous pouvons citer : l’écosystème du lac sensu-stricto ne renfermant qu’une algue verte du nom de Dunaliella salina associée à des archées (Halobacterium) ; l’écosystème des étangs avec sa microflore à diatomées, sa microfaune à foraminifères et ostracode et sa macrofaune à tilapia ; l’écosystème des dunes avec ses plantations de filao ; l’écosystème de la frange bordière du lac avec sa végétation ligneuse et herbacée, à laquelle s’ajoute une faune ornithologiques abondante et diversifiée.
+  
+  Le tourisme est l’une des activités les plus importantes au Lac Rose et au Sénégal, donc l’un des piliers du développement durable de la zone. La promotion du géotourisme comme dans le cadre du volcanisme d’Eboga au Cameroune (Zangmo Tefogoum et al, 2020) permettrait de conserver et protéger l’espace, de rapporter des bénéfices économiques et créer de l’emploi.
+  
+  Le Lac Rose et son environnement plus proche et plus accessible, jouent les mêmes rôles scientifiques et socio-économiques que la Réservée Naturelle communautaire de Dindéfélo au Sénégal oriental (Youm, 2019) dans la Vallée de Walidiala au Sénégal oriental. Il s’agit d’un site dont le patrimoine géologique d’âge Holocène à l’actuel, est totalement différent au plan âge comme nature de celui de la Réserve Naturelle Communautaire de Dindéfélo d’âge précambrien. Ce géosite représente un paysage scénique, d’une beauté exceptionnelle marqué par la coloration rose de ses eaux et abrite des activités socio-économiques qui constituent une contribution notable au développement durable. Il présente une valeur scientifique et culturelle remarquée à travers les travaux scientifiques menés dans les domaines de la géologie, de l’hydrogéologie, de l’archéologie ; et les visites pédagogiques qui y sont régulièrement organisées. Ces deux zones peuvent constituer les pôles pilotes pour la mise en place de géoparcs au Sénégal afin de créer une nouvelle niche touristique : le géotourisme.
+  
+  Ainsi, le Lac Rose et ses environs constituent un géosite à valeur socio-économique locale, nationale et même internationale avec le tourisme, l’exploitation du sel, le maraîchage et l’arboriculture, le petit commerce. </span></h3>
+    </div>
+  <div id="mainContent">
+    <h1><a name="hautdepage" id="hautdepage"></a>Lac ROSE, Une Beauté Naturelle<img src="../../image/lac-rose-ats-4-1.jpg" alt="lacrose" width="525" height="800" /><img src="../../image/OpenStreetMap.jpg" alt="OPENSTREETMAP" width="528" height="701" /></h1>
+    <h2 class="style3 style5"><a name="activiteemeneeaulac" id="activiteemeneeaulac"></a><a href="#activiteemeneeaulac">ACTIVITE MENEE AU LAC</a><img src="../../image/lacrosef.jpg" alt="lacrose" width="523" height="595" /><img src="../../image/retba2SEL ACTIVITE.jpg" alt="lacrose" width="510" height="408" /></h2>
+    <h2 class="style3 style5"> L'activité principale du lac est l'exploitation du sel, extrait de ses eaux depuis des années. Cela explique pourquoi le lac acquiert cette couleur si particulière lorsque le soleil atteint le zénith. La quantité de sel y est 10 fois supérieure à celle de la mer !
+      Le lac Rose du Sénégal est situé à quelques centaines de mètres de l’océan Atlantique, à 35 km au nord-est de Dakar. 
+      En vous rendant au Lac, vous pourrez y apercevoir les hommes ramasser le sel dans le lac. Ils doivent s’enduire de beurre de karité pour éviter une agression trop forte du sel sur leur peau. En effet, ils passent beaucoup de temps dans l’eau du lac. Ils sont équipés d’un bout de bois pour casser les blocs de sel pêchés au fond du lac et déposer leur récolte sur leur barque. 
+      
+      Les femmes, quant à elles, transportent le sel des barques sur la terre ferme. Elles portent des turbans sur la tête pour y placer les seaux remplis de sel.
+    Juste à côté du Lac Rose se trouve le village de Niaga. C’est un village traditionnel sénégalais, même s’il est plus développé que certains. En effet, ce village a bénéficié du mythique rallye Paris-Dakar et des revenus qu’il a généré. En flânant dans les rues, vous pourrez vous imprégner de la culture locale. </h2>
+    <h2 class="style3 style5"><a name="quefaireaulacroseetcommentsyrendre" id="quefaireaulacroseetcommentsyrendre"></a><a href="#quefaireaulacroseetcommentsyrendre">Que faire au Lac Rose et comment s'y rendre</a><img src="../../image/imgp1556LAC.jpg" alt="lacrose" width="529" height="604" /> Balade en pirogue sur le Lac
+      Une traversée du lac en pirogue traditionnelle est une excellente façon de découvrir les environs et de voir le lac sous un autre angle. Vous pouvez profiter d’une vue panoramique sur le lac et admirer la beauté naturelle des lieux. Vous aurez aussi la chance de voir les ramasseurs de sel de plus près.
+      
+      Aux alentours du Lac Rose se trouvent des dunes et une plage à parte de vue ! C’est une expérience que je vous conseille de faire pour en prendre plein les yeux. Les paysages sont magnifiques.
+      La visite du Lac Rose peut très bien aller d’une demi-journée à 2 jours selon vos envies. L’essentiel peut être fait en une demi-journée. Cependant, si vous souhaitez prendre le temps et apprécier davantage ce paysage magnifique, vous pouvez très bien passer la nuit près du Lac.
+      
+      
+      
+      
+      
+      
+      
+      Comment se rendre 
+      Par la route, deux possibilités s’offrent à vous : tournez à droite à hauteur du croisement Keur Massar au km 20, ensuite rouler jusqu’au terminus de l’Autobus pour emprunter la route de « Boune » (en mauvais état), ensuite à gauche ver le village de Niaga. La deuxième solution par le nationale 1 est de passer par la ville de Rufisque, ensuite Sangalkam, puis Bambilor. Compter une petite heure de trajet.
+      Louer une voiture : la location d’une voiture peut être une bonne option puisque cela permet une plus grande liberté. Les routes vers le lac sont relativement bien entretenues et faciles à naviguer. 
+      Utiliser les transports en commun : vous pouvez emprunter un taxi collectif ou un bus au départ de Dakar.  
+    Réserver une excursion avec un guide francophone : cette option est selon moi la plus économique et qui offre la meilleure expérience. Très souvent, le prix de l’excursion comprend le transport. De plus, un guide qui connaît son pays vous accompagne et vous partage sa passion. </h2>
+    <h2 class="style3 style5"><a name="histoiredulac" id="histoiredulac"></a><a href="#histoiredulac">Histoire du Lac</a><img src="../../image/LACROSEEVOLUTION.jpg" alt="lacrose" width="480" height="629" /></h2>
+    <p class="style5">Le lac Retba communiquait jadis avec l’océan par l’intermédiaire d’un chenal colmaté par les dunes. Dans sa partie méridionale (côté lac), cet ancien chenal est occupé par une succession d’étangs permanents (profondeur 1 m), à salinité variable en fonction des saisons, se déversant par un mince filet d’eau dans le lac. Ils reçoivent de l’eau salée en provenance de l’océan, de l’eau douce de la nappe des sables quaternaires et des eaux de pluie
+      vous ne pouvez pas vivre tous les jours, et qui mérite vraiment d’être vécue.Le Lac Rose constitue également un « reposoir » pour de nombreuses espèces d’oiseaux (fig. 5C). Les plus importantes sont le Combattant varié (Philomachus pugnax), le Bécasseau cocorli (Calidris ferruginea), la Sarcelle d’hiver (Anas crecca), le Petit Gravelot (Charadrius dubius), la Glaréole à collier (Glareola pratincola), le Cochevis huppé (Galerida cristata), le Chevalier guignette (Actitis hypoleucos), le Faucon crécerellette (Falco naumanni), le Busard pâle (Circus macrourus). Le pourtour du lac constitue par ailleurs un site de nidification de l’Échasse blanche (Himantopus himantopus) (Baillon, 1985). On y distingue plusieurs types d’écosystèmes (Reynaud et Roger, 1978 ; Rey et al., 2009)Le Lac Rose, géosite menacé de disparition
+      Plusieurs menaces pèsent sur l’environnement du lac Retba initialement relié à l’océan atlantique sous forme de lagune. Depuis sa déconnexion avec l’océan et son isolement, la surface du plan d’eau se rétrécit au fil du temps. Les rythmes d’atterrissement s’accélèrent en réponse à la sécheresse climatique débutée dans les années 1970. A côté de ce forçage climatique, la pression démographique et le poids des activités humaines perturbent le fonctionnement « naturel » de l’espace littoral du lac Retba qui ne possède pas une capacité de charge suffisante pour s’ajuster à la demande. Les changements environnementaux sont alors multiples et rapides. Emergent alors des risques environnementaux mais aussi phytosanitaires pour les populations, agriculteurs et les exploitants de sel. De ce fait, l’avenir de cet espace semble compromis sans une meilleure gestion des activités et des pratiques agricoles, garante de la préservation de ce milieu littoral dont l’importance socio-économique et culturelle est essentielle pour le Sénégal. La croissance incontrôlée, de ces dernières décennies, a abouti à une urbanisation massive de cette zone fragile et exposée : les Niayes. Les amas coquilliers à Senilia senilis, situés sur les rives sud et nord-est, sont exploités d’une façon anarchique et aucune quantification de leur exploitation n’est disponible. Le cordon sableux sur les plages et dunes est quotidiennement pris d’assaut par les « voleurs de sable ». Le maraîchage et l’arboriculture sont très développés dans le périmètre compris entre le lac et les dunes. Ces activités exposent le géosite « Lac Rose » à des menaces qui peuvent impacter sur deux aspects : l’alimentation en eau et sel et le maintien de la dépression. </p>
+        <p class="style5 style5"> Chaque année, le lac rétrécit un peu, il a même perdu la moitié de sa surface en seulement 200 ans ! Il est donc temps de le visiter.      </p>
+           <a href="#hautdepage">Haut de Page</a>
+    <p class="style5 style5">&nbsp;</p>
+    <p class="style3 style5">&nbsp;</p>
+    <p class="style3 style5">&nbsp;</p>
+    <h1><br class="clearfloat" />
+    
+    </h1>
+  </div>
+  <div id="footer">
+    <p><strong>SIG et Tourisme au sénégal copyright&copy;janvier 2025</strong></p>
+      
+  <!-- end #footer --></div>
+<!-- end #container --></div>
+</body>
+</html>
+
